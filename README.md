@@ -38,7 +38,8 @@ Assuming that data root is $DATA_ROOT = $HOME/data/
 3. Create the LMDB file.
   ```Shell
   cd $CAFFE_ROOT
-  # Create the trainval.txt, test.txt, and test_name_size.txt in $DATA_ROOT/checkerboard/Images. The images will be shuffled.
+  # Create the trainval.txt, test.txt, and test_name_size.txt in 
+  # $DATA_ROOT/checkerboard/Images. The images will be shuffled.
   bash data/checkerboard/create_list.sh
   # You can modify the parameters in create_data.sh if needed.
   # It will create lmdb files for trainval and test with encoded original image:
@@ -58,7 +59,8 @@ Assuming that data root is $DATA_ROOT = $HOME/data/
   # and save temporary evaluation results in:
   #   - $HOME/data/VOCdevkit/results/checkerboard/SSD_300x300/
   python examples/checkerboard/ssd_checkerboard.py
-  # You can modify the parameters according to the model you want to train, e.g. `max_iter`, `num_classes`, `background_index_id`, ...
+  # You can modify the parameters according to the model you want to train,
+  # e.g. `max_iter`, `num_classes`, `background_index_id`, ...
   ```
 2. Test your model using still image. Note: press <kbd>enter</kbd> to stop.
   ```Shell
