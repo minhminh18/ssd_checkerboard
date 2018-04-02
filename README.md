@@ -34,18 +34,18 @@ Original work by [Wei Liu](http://www.cs.unc.edu/~wliu/), [Dragomir Anguelov](ht
 ### Preparation
 Assuming that data root is $DATA_ROOT = $HOME/data/
 1. Images are taken with Pi camera and stored at $DATA_ROOT/checkerboard/Images.
-2. Bounding boxes are defined and images are labelled with the tool can be downloaded from https://github.com/tzutalin/labelImg.
+2. Bounding boxes are defined and images are labelled with the tool which can be downloaded from https://github.com/tzutalin/labelImg. The tool will create VOC data. You can refer to the guidance here https://github.com/jinfagang/kitti-ssd.
 3. Create the LMDB file.
   ```Shell
   cd $CAFFE_ROOT
   # Create the trainval.txt, test.txt, and test_name_size.txt in $DATA_ROOT/checkerboard/Images. The images will be shuffled.
-  ./data/checkerboard/create_list.sh
+  bash data/checkerboard/create_list.sh
   # You can modify the parameters in create_data.sh if needed.
   # It will create lmdb files for trainval and test with encoded original image:
   #   - $DATA_ROOT/checkerboard/lmdb/checkerboard_trainval_lmdb
   #   - $DATA_ROOT/checkerboard/lmdb/checkerboard_test_lmdb
   # and make soft links at examples/checkerboard/
-  ./data/checkerboard/create_data.sh
+  bash data/checkerboard/create_data.sh
   ```
 
 ### Train/Eval
@@ -58,6 +58,7 @@ Assuming that data root is $DATA_ROOT = $HOME/data/
   # and save temporary evaluation results in:
   #   - $HOME/data/VOCdevkit/results/checkerboard/SSD_300x300/
   python examples/checkerboard/ssd_checkerboard.py
+  # You can modify the parameters according to the model you want to train, e.g. `max_iter`, `num_classes`, `background_index_id`, ...
   ```
 2. Test your model using still image. Note: press <kbd>enter</kbd> to stop.
   ```Shell
