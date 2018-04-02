@@ -62,8 +62,9 @@ Assuming that data root is $DATA_ROOT = $HOME/data/
   ```
 2. Test your model using still image. Note: press <kbd>enter</kbd> to stop.
   ```Shell
-  # If you would like to attach a webcam to a model you trained, you can do:
+  # If you would like to test a model you trained with an image, you can do:
   python examples/checkerboard/checkerboard_detection.py
+  # Replace the image name with the name of your image
   ```
 =======
 # ssd_checkerboard
